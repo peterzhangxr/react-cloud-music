@@ -1,6 +1,18 @@
 {
   "short_name": "网易云音乐 - React",
-  "name": "网易云音乐React版",
+  "name": "网易云音乐 React版 PeterZhang出品",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "40x40",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "270x270"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

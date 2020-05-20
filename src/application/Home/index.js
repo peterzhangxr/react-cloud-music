@@ -1,14 +1,20 @@
 import React from 'react'
-import { renderRoutes } from "react-router-config";
-
+import Slider from '../../components/slider'
+import { Search } from './style'
 function Home(props) {
-  console.log(props)
-  const { route } = props
+  const bannerList = [0, 1, 2, 3]
   return (
-    <div> 
-      <div>Home</div>
-      { renderRoutes(route.routes) }
+    <div>
+      <Search> 
+        <div className="search-hd"></div>
+        <div className="search-bd">
+          <div className="search-bd__text">我相信 最近很火哦</div>
+        </div>
+        <div className="search-ft"></div>
+      </Search>
+      <Slider list={bannerList}></Slider>
     </div>
+    
   )
 }
 

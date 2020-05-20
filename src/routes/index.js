@@ -1,31 +1,28 @@
-import React from 'react'
+import React, {lazy, Suspense} from 'react'
 import { Redirect } from 'react-router-dom'
-import Home from '../application/Home'
-import Recommend from '../application/Recommend'
-import Singers from '../application/Singers'
-import Rank from '../application/Rank'
+import MainLayout from '../layouts/Main'
+
+const SuspenseComponent = Component => props => {
+  return (
+    <Suspense fallback={null}>
+      <Component {...props}></Component>
+    </Suspense>
+  )
+}
 
 export default [
   {
     path: '/',
-    component: Home,
+    component: MainLayout,
     routes: [
       {
         path: '/',
         exact: true,
-        render: () => <Redirect to={"/recommend"} />
+        render: () => <Redirect to={"/home"} />
       },
       {
-        path: '/recommend',
-        component: Recommend
-      },
-      {
-        path: '/singers',
-        component: Singers
-      },
-      {
-        path: '/rank',
-        component: Rank
+        path: '/home',
+        component: SuspenseComponent(lazy(() => import('../application/Home/')))
       }
     ]
   }

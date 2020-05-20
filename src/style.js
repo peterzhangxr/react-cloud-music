@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     outline: none;
+    box-sizing: border-box;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 

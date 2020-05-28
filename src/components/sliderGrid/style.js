@@ -15,7 +15,6 @@ export const SliderContainer = styled.div`
     position: relative;
     display: flex;
     width: 100%;
-    background: #f7f7f7;
     &:after {
       content: '';
       padding-top: 100%;

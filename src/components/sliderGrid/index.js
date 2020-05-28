@@ -3,14 +3,15 @@ import { SliderContainer } from './style'
 import 'swiper/css/swiper.css'
 import Swiper from 'swiper'
 
-const Slider = React.forwardRef((props, ref) => {
+const SliderGrid = React.forwardRef((props, ref) => {
   const [slideSwiper, setSlideSwiper] = useState(null)
   const { list } = props
+
   useEffect(() => {
     if (list.length > 0 && !slideSwiper) {
       let swiper = new Swiper(ref.current, {
-        loop: true,
-        pagination: {el:'.swiper-pagination'},
+        slidesPerView: 'auto',
+        spaceBetween: 10,
       })
 
       setSlideSwiper(swiper)
@@ -19,24 +20,25 @@ const Slider = React.forwardRef((props, ref) => {
 
   return (
     <SliderContainer>
-      <div ref={ref} className="slider-container-ppt slider-container">
+      <div ref={ref} className="slider-container">
         <div className="swiper-wrapper">
           {
+            
             list.map(slide => {
               return (
                 <div key={slide} className="swiper-slide">
                   <div className="swiper-slide__box">
-                    <img src="https://via.placeholder.com/686x268" alt=""/>
+                    <img src="https://via.placeholder.com/208x208" alt=""/>
                   </div>
+                  <div className="swiper-slide__text">今天从《好想爱这个世界啊》听起｜私人雷达</div>
                 </div>
               )
             })
           }
         </div>
-        <div className="swiper-pagination"></div>
       </div>
     </SliderContainer>
   )
 })
 
-export default React.memo(Slider)
+export default React.memo(SliderGrid)

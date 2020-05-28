@@ -9,6 +9,6 @@ export const getBannerList = (data) => ({
 
 export const fetchBannerList = () => {
   return (dispatch) => {
-    dispatch(getBannerList([0, 1, 2, 3]))
+    dispatch(getBannerList([0, 1, 2, 3, 4, 5, 6, 7]))
   }
 }
